@@ -17,7 +17,7 @@ export const PrivateChat = () => {
     // Fetch previous messages
     const fetchMessages = async () => {
       try {
-        const res = await fetch("http://localhost:3000/Profile/messages/getAll", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:3000"}/Profile/messages/getAll`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

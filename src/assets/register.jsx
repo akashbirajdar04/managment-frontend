@@ -18,7 +18,7 @@ export const Register = () => {
     setIsLoading(true);
 
     axios
-      .post("http://localhost:3000/register", {
+      .post(`${import.meta.env.VITE_API_URL || "http://localhost:3000"}/register`, {
         username: name,
         email,
         password,
