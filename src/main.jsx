@@ -5,7 +5,7 @@ import App from './App.jsx'
 import "./App.css"
 import "./index.css"
 import './style.css';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+
 import { Toaster } from 'sonner';
 
 import { SpeedInsights } from "@vercel/speed-insights/react"
