@@ -31,7 +31,16 @@ export const Register = () => {
       })
       .catch((err) => {
         console.error(err);
-        toast.error(err.response?.data?.message || "Try again!");
+        const responseData = err.response?.data;
+        if (responseData?.errors && Array.isArray(responseData.errors)) {
+          // Extract and display specific validation errors
+          responseData.errors.forEach(errorObj => {
+            const msg = Object.values(errorObj)[0];
+            toast.error(msg);
+          });
+        } else {
+          toast.error(responseData?.message || "Try again!");
+        }
       })
       .finally(() => {
         setIsLoading(false);
