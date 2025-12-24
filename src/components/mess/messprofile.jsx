@@ -108,13 +108,8 @@ export const Messprofile = () => {
         }
     };
 
-    if (loading) {
-        return (
-            <div className="flex justify-center py-12">
-                <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
-            </div>
-        );
-    }
+    // Removed blocking loader to enable progressive image loading
+    // if (loading) return ...
 
     return (
         <div className="max-w-5xl mx-auto pb-12">
@@ -164,7 +159,7 @@ export const Messprofile = () => {
                                 />
 
                                 {/* REAL AVATAR — LOADS LATER */}
-                                {form.image && form.image !== "/hero.png" && (
+                                {form.image && form.image !== "/hero.webp" && (
                                     <img
                                         src={form.image}
                                         alt="Profile"

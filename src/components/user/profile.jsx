@@ -79,17 +79,8 @@ const StudentProfile = () => {
     }
   };
 
-  if (loading) {
-
-    return (
-      <div className="flex items-center justify-center min-h-[60vh]">
-        <div className="text-center">
-          <Loader2 className="mx-auto h-10 w-10 text-blue-600 animate-spin" />
-          <p className="mt-3 text-slate-500 font-medium">Loading your profile...</p>
-        </div>
-      </div>
-    );
-  }
+  // Non-blocking render to allow immediate LCP placeholder display
+  // if (loading) return ...
 
   return (
     <div className="max-w-4xl mx-auto pb-12">
@@ -129,7 +120,7 @@ const StudentProfile = () => {
               <div className="relative w-24 h-24 rounded-full overflow-hidden bg-slate-100 border-2 border-slate-200">
                 {/* STATIC PLACEHOLDER — SAFE */}
                 <img
-                  src="/hero.png"
+                  src="/hero.webp"
                   alt="Profile placeholder"
                   width="96"
                   height="96"
@@ -139,7 +130,7 @@ const StudentProfile = () => {
                 />
 
                 {/* REAL AVATAR — LOADS LATER */}
-                {preview && preview !== "/hero.png" && (
+                {preview && preview !== "/hero.webp" && (
                   <img
                     src={preview}
                     alt="Profile"

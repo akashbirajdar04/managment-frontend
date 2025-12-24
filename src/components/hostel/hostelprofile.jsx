@@ -79,13 +79,14 @@ export const Hostelprofile = () => {
         }
     };
 
-    if (loading) {
-        return (
-            <div className="flex justify-center py-12">
-                <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
-            </div>
-        );
-    }
+    // Loading state removed from blocking render to allow LCP optimization
+    // if (loading) {
+    //     return (
+    //         <div className="flex justify-center py-12">
+    //             <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
+    //         </div>
+    //     );
+    // }
 
     return (
         <div className="max-w-4xl mx-auto space-y-6">
@@ -182,7 +183,7 @@ export const Hostelprofile = () => {
                         <div className="aspect-video rounded-lg bg-slate-100 border-2 border-dashed border-slate-300 flex flex-col items-center justify-center text-slate-400 hover:bg-slate-50 hover:border-blue-400 hover:text-blue-500 transition-all cursor-pointer relative overflow-hidden group">
                             {/* STATIC PLACEHOLDER — SAFE */}
                             <img
-                                src="/hero.png"
+                                src="/hero.webp"
                                 alt="Profile placeholder"
                                 fetchPriority="high"
                                 loading="eager"
@@ -190,7 +191,7 @@ export const Hostelprofile = () => {
                             />
 
                             {/* REAL IMAGE — LOADS LATER */}
-                            {profile.image && profile.image !== "/hero.png" && (
+                            {profile.image && profile.image !== "/hero.webp" && (
                                 <img
                                     src={profile.image}
                                     alt="Hostel"
