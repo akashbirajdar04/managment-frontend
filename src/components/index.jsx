@@ -82,6 +82,19 @@ export const Index = () => {
                             </button>
                         </div>
 
+                        <div className="relative">
+                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-20 animate-pulse"></div>
+                            <img
+                                src="/hero.png"
+                                alt="HostelHub Dashboard Preview"
+                                className="relative rounded-2xl shadow-2xl border border-slate-200 w-full"
+                                fetchPriority="high"
+                                loading="eager"
+                                width={1200}
+                                height={675}
+                            />
+                        </div>
+
 
 
                     </div>
