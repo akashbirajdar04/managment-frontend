@@ -1,6 +1,7 @@
 // App.jsx
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Loading } from "./components/ui/Loading.jsx";
 
 // Pages / Components (Lazy Loaded)
@@ -50,6 +51,7 @@ const PollList = React.lazy(() => import("./components/polls/PollList.jsx")); //
 function App() {
   return (
     <Suspense fallback={<Loading />}>
+      <SpeedInsights />
       <Routes>
         {/* Public */}
         <Route path="/" element={<Index />} />
